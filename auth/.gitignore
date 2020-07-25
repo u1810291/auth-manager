@@ -1,0 +1,4 @@
+auth/__pycache__
+gateway/__pycache__
+db.sqlite3
+gateway/migrations
