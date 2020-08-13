@@ -2,13 +2,35 @@ from django.db import models
 from django.contrib.auth.models import User
 # Создайте свои модели здесь.
 
-class userProfile(models.Model):
-    user=models.OneToOneField(User,on_delete=models.CASCADE,related_name="profile")
-    description=models.TextField(blank=True,null=True)
-    location=models.CharField(max_length=30,blank=True)
-    date_joined=models.DateTimeField(auto_now_add=True)
-    updated_on=models.DateTimeField(auto_now=True)
-    is_organizer=models.BooleanField(default=False)
+class UserProfile(models.Model):
+    user            = models.OneToOneField(User,on_delete=models.CASCADE,related_name="profile")
+    f_name          = models.CharField(max_length=255)
+    l_name          = models.CharField(max_length=255)
+    m_name          = models.CharField(max_length=255)
+    INN             = models.IntegerField()
+    phone           = models.IntegerField()
+    passport        = models.CharField(max_length=255)
+    address         = models.CharField(max_length=255)
+    email           = models.CharField(max_length=255)
+    role_id         = models.IntegerField()
+    date_created    = models.DateTimeField()
+    date_updated    = models.DateTimeField()
+    date_deleted    = models.DateTimeField()
 
     def __str__(self):
         return self.user.name
+
+class Role(models.Model):
+    name            = models.CharField(max_length=255)
+    description     = models.CharField(max_length=255)
+    date_created    = models.DateTimeField()
+    date_updated    = models.DateTimeField()
+    date_deleted    = models.DateTimeField()
+
+
+class UserMetaData(models.Model):
+    user_id	        = models.OneToOneField(User, on_delete=models.CASCADE)
+    last_login      = models.DateTimeField()
+    user_status	    = models.CharField(max_length=255)
+    register_date   = models.DateTimeField()
+    token           = models.CharField(max_length=255)
