@@ -13,9 +13,9 @@ class UserProfile(models.Model):
     address         = models.CharField(max_length=255)
     email           = models.CharField(max_length=255)
     role_id         = models.IntegerField()
-    date_created    = models.DateTimeField()
-    date_updated    = models.DateTimeField()
-    date_deleted    = models.DateTimeField()
+    date_created    = models.DateTimeField(auto_created=True)
+    date_updated    = models.DateTimeField(auto_created=True)
+    date_deleted    = models.DateTimeField(auto_created=True)
 
     def __str__(self):
         return self.user.name
@@ -23,14 +23,24 @@ class UserProfile(models.Model):
 class Role(models.Model):
     name            = models.CharField(max_length=255)
     description     = models.CharField(max_length=255)
-    date_created    = models.DateTimeField()
-    date_updated    = models.DateTimeField()
-    date_deleted    = models.DateTimeField()
+    date_created    = models.DateTimeField(auto_created=True)
+    date_updated    = models.DateTimeField(auto_created=True)
+    date_deleted    = models.DateTimeField(auto_created=True)
 
 
 class UserMetaData(models.Model):
     user_id	        = models.OneToOneField(User, on_delete=models.CASCADE)
-    last_login      = models.DateTimeField()
+    last_login      = models.DateTimeField(auto_created=True)
     user_status	    = models.CharField(max_length=255)
-    register_date   = models.DateTimeField()
+    register_date   = models.DateTimeField(auto_created=True)
     token           = models.CharField(max_length=255)
+
+
+class Lead(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100, unique=True)
+    message = models.CharField(max_length=255, blank=True)
+    owner = models.ForeignKey(User, 
+    related_name="leads", on_delete=models.CASCADE,
+    null=True)
+    created_at = models.DateTimeField(auto_created=True)
