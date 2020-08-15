@@ -13,9 +13,9 @@ class UserProfile(models.Model):
     address         = models.CharField(max_length=255)
     email           = models.CharField(max_length=255)
     role_id         = models.IntegerField()
-    date_created    = models.DateTimeField(auto_created=True)
-    date_updated    = models.DateTimeField(auto_created=True)
-    date_deleted    = models.DateTimeField(auto_created=True)
+    date_created    = models.DateTimeField(auto_now_add=True)
+    date_updated    = models.DateTimeField(auto_now_add=True)
+    date_deleted    = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.user.name
@@ -23,16 +23,16 @@ class UserProfile(models.Model):
 class Role(models.Model):
     name            = models.CharField(max_length=255)
     description     = models.CharField(max_length=255)
-    date_created    = models.DateTimeField(auto_created=True)
-    date_updated    = models.DateTimeField(auto_created=True)
-    date_deleted    = models.DateTimeField(auto_created=True)
+    date_created    = models.DateTimeField(auto_now_add=True)
+    date_updated    = models.DateTimeField(auto_now_add=True)
+    date_deleted    = models.DateTimeField(auto_now_add=True)
 
 
 class UserMetaData(models.Model):
     user_id	        = models.OneToOneField(User, on_delete=models.CASCADE)
-    last_login      = models.DateTimeField(auto_created=True)
+    last_login      = models.DateTimeField(auto_now_add=True)
     user_status	    = models.CharField(max_length=255)
-    register_date   = models.DateTimeField(auto_created=True)
+    register_date   = models.DateTimeField(auto_now_add=True)
     token           = models.CharField(max_length=255)
 
 
@@ -43,4 +43,4 @@ class Lead(models.Model):
     owner = models.ForeignKey(User, 
     related_name="leads", on_delete=models.CASCADE,
     null=True)
-    created_at = models.DateTimeField(auto_created=True)
+    created_at = models.DateTimeField(auto_now_add=True)

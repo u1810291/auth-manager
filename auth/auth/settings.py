@@ -39,19 +39,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #third party package for user registration and authentication endpoints 	
-    'djoser',
+    # 'djoser',
      #rest API implementation library for django
     'rest_framework',
 	#JWT authentication backend library
-    'rest_framework_simplejwt',
-    'rest_framework.authtoken',
+    # 'rest_framework_simplejwt',
+    # 'rest_framework.authtoken',
     'gateway',
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
+    # 'DEFAULT_AUTHENTICATION_CLASSES': (
+    #     'rest_framework_simplejwt.authentication.JWTAuthentication',
+    # ),
     'DEFAULT_PERMISSIONS_CLASSES': (
         'rest_framework.permissions.IsAuthentiacted',
     )
