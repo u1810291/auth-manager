@@ -4,18 +4,22 @@
   "description": "Authenticating manager in the other words API Gateway\r npm i -D webpack webpack-cli\r npm i -D @babel/core babel-loader @babel/preset-env @babel/preset-react babel-plugin-transform-class-properties\r npm i react react-dom prop-types",
   "main": "webpack.config.js",
   "dependencies": {
-    "babel-loader": "^8.1.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
-  "devDependencies": {},
   "scripts": {
-    "dev": "webpack --mode development ./auth/frontend/src/index.js --output ./auth/frontend/static/frontend/main.js", 
-    "build": "webpack --mode production ./auth/frontend/src/index.js --output ./auth/frontend/static/frontend/main.js"
+    "dev": "webpack --mode development --watch ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/static/frontend/main.js"
   },
   "keywords": [],
   "author": "",
