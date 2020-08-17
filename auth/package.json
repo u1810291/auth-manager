@@ -4,9 +4,14 @@
   "description": "Authenticating manager in the other words API Gateway\r npm i -D webpack webpack-cli\r npm i -D @babel/core babel-loader @babel/preset-env @babel/preset-react babel-plugin-transform-class-properties\r npm i react react-dom prop-types",
   "main": "webpack.config.js",
   "dependencies": {
+    "axios": "^0.19.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
