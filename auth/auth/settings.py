@@ -57,16 +57,16 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthentiacted',
     )
 }
-JWT_AUTH = {
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(minutes=1532221),
-}
-DJOSER = {
-    'PASSWORD_RESET_CONFIRM_URL': '#/password/reset/confirm/{uid}/{token}',
-    'USERNAME_RESET_CONFIRM_URL': '#/username/reset/confirm/{uid}/{token}',
-    'ACTIVATION_URL': '#/activate/{uid}/{token}',
-    'SEND_ACTIVATION_EMAIL': True,
-    'SERIALIZERS': {},
-}
+# JWT_AUTH = {
+#     'JWT_EXPIRATION_DELTA': datetime.timedelta(minutes=1532221),
+# }
+# DJOSER = {
+#     'PASSWORD_RESET_CONFIRM_URL': '#/password/reset/confirm/{uid}/{token}',
+#     'USERNAME_RESET_CONFIRM_URL': '#/username/reset/confirm/{uid}/{token}',
+#     'ACTIVATION_URL': '#/activate/{uid}/{token}',
+#     'SEND_ACTIVATION_EMAIL': True,
+#     'SERIALIZERS': {},
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
