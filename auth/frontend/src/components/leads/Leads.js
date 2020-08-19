@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { getLeads, deleteLead } from '../../actions/leads';
+import { deleteLead, getLeads } from '../../actions/leads';
 
 
 export class Leads extends Component {
@@ -39,7 +39,6 @@ export class Leads extends Component {
                             </tr>
                         ))}
                     </tbody>
-
                 </table>
             </Fragment>
         )

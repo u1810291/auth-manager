@@ -15,7 +15,7 @@ export default function(state = initialState, action){
             return {
                 ...state,
                 leads: state.leads.filter(lead => lead.id !== action.payload)
-            }
+            };
         default:
             return state;
     }

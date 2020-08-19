@@ -19,12 +19,16 @@ export const getLeads = () => dispatch => {
 
 
 export const deleteLead = id => dispatch => {
-    axios
-        .delete(`/api/leads/${id}/`)
+    axios.delete(`/api/leads/${id}/`)
         .then(res => {
             dispatch({
                 type: DELETE_LEAD,
                 payload: id
             });
-        }).catch(err => console.log(err));
+        }).catch(err => {
+            console.log(err)
+        });
+
+
+        
 };

@@ -3,4 +3,5 @@ gateway/__pycache__
 frontend/__pycache__
 db.sqlite3
 gateway/migrations
+frontend/migrations
 node_modules

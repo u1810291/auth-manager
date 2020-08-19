@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 	#JWT authentication backend library
     # 'rest_framework_simplejwt',
     # 'rest_framework.authtoken',
+    'corsheaders',
     'gateway',
     'frontend',
 ]
@@ -76,6 +77,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'auth.urls'
