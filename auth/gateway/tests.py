@@ -1,4 +1,6 @@
 from django.test import APITestCase
+from django.urls import reverse
+from rest_framework import status
 
 class userProfileTestCase(APITestCase):
     profile_list_url=reverse('all-profiles')
