@@ -43,14 +43,17 @@ INSTALLED_APPS = [
      #rest API implementation library for django
     'rest_framework',
 	#JWT authentication backend library
-    'rest_framework_simplejwt',
     'rest_framework.authtoken',
     'gateway',
 ]
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+
+ACCOUNT_EMAIL_REQUIRED = False
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
     ),
     'DEFAULT_PERMISSIONS_CLASSES': (
         'rest_framework.permissions.IsAuthentiacted',
@@ -60,13 +63,17 @@ JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(minutes=1532221),
 }
 DJOSER = {
+    'LOGIN_FIELD': '#/',
     'PASSWORD_RESET_CONFIRM_URL': '#/password/reset/confirm/{uid}/{token}',
     'USERNAME_RESET_CONFIRM_URL': '#/username/reset/confirm/{uid}/{token}',
     'ACTIVATION_URL': '#/activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': True,
     'SERIALIZERS': {},
 }
+JWT_ALLOW_REFRESH = True
 
+
+PASSWORD_RESET_TIMEOUT_DAYS=30
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

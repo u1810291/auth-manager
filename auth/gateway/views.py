@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from .models import userProfile
 from .permissions import IsOwnerProfileOrReadOnly
 from .serializers import userProfileSerializer
-
+from rest_framework.authentication import TokenAuthentication
 
 class UserProfileListCreateView(ListCreateAPIView):
     queryset=userProfile.objects.all()
@@ -19,3 +19,5 @@ class userProfileDetailView(RetrieveUpdateDestroyAPIView):
     queryset=userProfile.objects.all()
     serializer_class=userProfileSerializer
     permission_classes=[IsOwnerProfileOrReadOnly,IsAuthenticated]
+
+# https://www.youtube.com/watch?v=C6S3dMt1s_M
