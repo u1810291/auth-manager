@@ -5,3 +5,6 @@ npm i -D @babel/core babel-loader @babel/preset-env @babel/preset-react babel-pl
 npm i react react-dom prop-types
 npm i redux react-redux redux-thunk redux-devtools-extension
 npm i axios
+<!-- Tutorial 4 -->
+
+npm i react-alert react-alert-template-basic react-transition-group
