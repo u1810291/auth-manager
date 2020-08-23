@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import Header from './layout/Header';
 import Dashboard from './leads/Dashboard';
+import {Alerts} from './layout/Alerts';
+
 
 import { Provider } from "react-redux";
 import { Provider as AlertProvider } from 'react-alert';
@@ -24,6 +26,7 @@ class App extends Component{
                 <AlertProvider template={AlertTemplate}{...alertOptions}>
                     <Fragment>
                         <Header/>
+                        <Alerts/>
                         <div className="container-fluid">
                             <Dashboard/>
                         </div>
