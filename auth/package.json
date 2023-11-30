@@ -4,7 +4,7 @@
   "description": "Authenticating manager in the other words API Gateway\r npm i -D webpack webpack-cli\r npm i -D @babel/core babel-loader @babel/preset-env @babel/preset-react babel-plugin-transform-class-properties\r npm i react react-dom prop-types",
   "main": "webpack.config.js",
   "dependencies": {
-    "axios": "^0.21.2",
+    "axios": "^1.6.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-alert": "^7.0.2",
